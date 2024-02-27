@@ -16,5 +16,5 @@ ___
 5. ***What are you planning to do next week***? _(give specific goals)_
   - Allocation of tasks for the project proposal document into individual responsibilites
   - Finish the tasks that were assigned and review the project proposal
-6. ***Is anything blocking you that you need from others?*** No
-    
+6. ***Is anything blocking you that you need from others?*** 
+  - No
