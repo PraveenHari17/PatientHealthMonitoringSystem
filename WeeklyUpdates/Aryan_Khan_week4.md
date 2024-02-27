@@ -3,7 +3,7 @@
 ### Student name: Aryan Huq Khan
 ### Week: Week 4 Jan 31-Feb 7
 ___
-1. **How many hours did you spend on the project this week? 7 hours
+1. How many hours did you spend on the project this week? 7 hours
 
 2. **Give rough breakdown of hours spent on 1-3 of the following:***
    1. Top item: Discussing and finalizing parts that our project needs, 2 hours
