@@ -5,8 +5,7 @@
 ___
 1. **How many hours did you spend on the project this week? 0 **
 
-2. **Give rough breakdown of hours spent on 1-3 of the following:***
-   (meetings, information gathering, design, research, brainstorming, evaluating options, prototyping options, writing/documenting, refactoring, testing, software implementation, hardware implementation)
+2. **Give rough breakdown of hours spent on 1-3 of the following:**
    1. Top item: Starting and Finishing up on Design Document, 0 hours
    2. 2nd item: activity, hours
 3. ***What did you accomplish this week?*** _(Be specific)_
