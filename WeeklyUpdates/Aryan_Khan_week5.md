@@ -3,7 +3,7 @@
 ### Student name: Aryan Huq Khan
 ### Week: Week 5 Feb 8-Feb 14
 ___
-1. **How many hours did you spend on the project this week? 3 hours
+1. How many hours did you spend on the project this week? 3 hours
 
 2. **Give rough breakdown of hours spent on 1-3 of the following:***
    1. Top item: Revising the proposal proposal document, 1.5 hours
