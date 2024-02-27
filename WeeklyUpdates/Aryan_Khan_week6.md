@@ -3,7 +3,7 @@
 ### Student name: Aryan Huq Khan
 ### Week: Week 6 Feb 15-Feb 21
 ___
-1. **How many hours did you spend on the project this week? 2 hour 
+1. How many hours did you spend on the project this week? 2 hour 
 
 2. **Give rough breakdown of hours spent on 1-3 of the following:***
    1. Top item: Reseach on Relays, 2 hours
