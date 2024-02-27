@@ -3,19 +3,18 @@
 ### Student name: Aryan Huq Khan
 ### Week: Week 4 Jan 31-Feb 7
 ___
-1. **How many hours did you spend on the project this week? (0-10)**
+1. **How many hours did you spend on the project this week? 7
 
 2. **Give rough breakdown of hours spent on 1-3 of the following:***
-   (meetings, information gathering, design, research, brainstorming, evaluating options, prototyping options, writing/documenting, refactoring, testing, software implementation, hardware implementation)
-   1. Top item: activity, hours
-   2. 2nd item: activity, hours
+   1. Top item: Discussing and finalizing parts that our project needs, 2 hours
+   2. 2nd item: Finishing my part the project proposal, 5 hours
 3. ***What did you accomplish this week?*** _(Be specific)_
-  - 
-  - 
+  - Finising up the project proposal. 
+  - Finishing up the use cases and sequence diagrams for Project Proposal.
 4. ***How do you feel about your progress?*** _(brief, free-form reflection)_
-  - 
-5. ***What are you planning to do next week***? _(give specific goals)_
-  - 
-  - 
-6. ***Is anything blocking you that you need from others?*** _(What do you need from whom)_
-  - 
+  - Parts had been chosen for the project.
+  - We've collectively decided that Russell will take charge of ordering all the project parts and will hold onto them until the project wraps up.
+5. ***What are you planning to do next week***? 
+  - Finish Project Proposal and do a final review on the document.
+6. ***Is anything blocking you that you need from others?*** No
+    
