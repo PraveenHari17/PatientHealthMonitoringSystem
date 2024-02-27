@@ -5,7 +5,7 @@
 ___
 1. How many hours did you spend on the project this week? 3 hours
 
-2. **Give rough breakdown of hours spent on 1-3 of the following:***
+2. **Give rough breakdown of hours spent on 1-3 of the following:**
    1. Top item: Our team met during the lab session and finalized our project idea with TA Oly, 2 hours
    2. 2nd item: Worked on the pre proposal document, 1 hour
 3. ***What did you accomplish this week?***
