@@ -6,16 +6,15 @@ ___
 1. **How many hours did you spend on the project this week? 3
 
 2. **Give rough breakdown of hours spent on 1-3 of the following:***
-   (meetings, information gathering, design, research, brainstorming, evaluating options, prototyping options, writing/documenting, refactoring, testing, software implementation, hardware implementation)
-   1. Top item: Russell and , hours
-   2. 2nd item: activity, hours
-3. ***What did you accomplish this week?*** _(Be specific)_
-  - 
-  - 
-4. ***How do you feel about your progress?*** _(brief, free-form reflection)_
-  - 
+   1. Top item: Our team met during the lab session and finalized our project idea with TA Oly. 2 hours
+   2. 2nd item: Worked on the pre proposal document
+3. ***What did you accomplish this week?***
+  - Finalized on Project Idea
+  - Finished the preposal 
+4. ***How do you feel about your progress?*** 
+  - Our progress is going very smooth as we allocated tasks for our group 
 5. ***What are you planning to do next week***? _(give specific goals)_
-  - 
-  - 
-6. ***Is anything blocking you that you need from others?*** _(What do you need from whom)_
+  - Allocation of tasks for the project proposal document into individual responsibilites
+  - Finish the tasks that were assigned and review the project proposal
+6. ***Is anything blocking you that you need from others?*** No
   - 
