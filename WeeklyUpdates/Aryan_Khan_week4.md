@@ -16,5 +16,6 @@ ___
   - We've collectively decided that Russell will take charge of ordering all the project parts and will hold onto them until the project wraps up.
 5. ***What are you planning to do next week***? 
   - Finish Project Proposal and do a final review on the document.
-6. ***Is anything blocking you that you need from others?*** No
+6. ***Is anything blocking you that you need from others?***
+  - No
     
