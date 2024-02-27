@@ -1,7 +1,7 @@
 ## Weekly Individual Project Update Report
 ### Group number: L2 G5
 ### Student name: Aryan Huq Khan
-### Week: 3 Jan 24-30
+### Week: 3 Jan 24-Jan 30
 ___
 1. **How many hours did you spend on the project this week? 3
 
