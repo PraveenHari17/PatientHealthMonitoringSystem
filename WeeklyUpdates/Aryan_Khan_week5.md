@@ -10,11 +10,11 @@ ___
    2. 2nd item: Meeting during the lab session to finalize who is doing what in the project, 1.5 hours
 3. ***What did you accomplish this week?*** _(Be specific)_
   - Revising the proposal proposal document according to the Feedback.
-  - 
-4. ***How do you feel about your progress?*** _(brief, free-form reflection)_
-  - 
+  - Divided the project's subsystems and allocated tasks to each member's preferance
+4. ***How do you feel about your progress?*** 
+  - Very nice, everyone in the our group is confident and happy about the task that has been allocated to them
 5. ***What are you planning to do next week***? _(give specific goals)_
-  - 
-  - 
+  - Research about relays and how to do use them with our sensors
+  - Learn how to control relays with Raspberry Pi
 6. ***Is anything blocking you that you need from others?*** _(What do you need from whom)_
-  - 
+  - No
