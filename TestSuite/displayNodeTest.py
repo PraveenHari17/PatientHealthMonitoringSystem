@@ -1,13 +1,20 @@
 import pyrebase 
 import sqlite3
-import run
+import auth
+import sys
+import os
+dir = os.getcwd()
+dir = dir[0:dir.rfind("/")+1]
+sys.path.insert(0, dir+'DisplayNode/')
+import displayNode
 
 def main(db, userToken) -> bool:
-	# Run display node
-	runFile("DisplayNode/displayNode.py", "DisplayNode/venv/bin/python")
 
+	#Read and asserts
+	#displayNode.updateTable()
+	#assert
 
-	return false
+	return False
 
 #run main and capture result in exit code
 db, userToken = auth.auth()

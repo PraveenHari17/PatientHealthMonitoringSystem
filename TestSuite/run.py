@@ -16,7 +16,7 @@ result = runTest("TestSuite/displayNodeTest.py", "DisplayNode/venv/bin/python")
 
 
 
-#Run a test case and capture result in result using exit codes
+#Run a test case and capture result in result using exit codes BLOCKING
 def runTest(file, venv) -> bool:
 	dir = os.getcwd()
 	dir = dir[0:dir.rfind("/")+1]
