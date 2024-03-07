@@ -5,6 +5,7 @@ def main(db, userToken) -> bool:
 	print("Hello")
 	return False;
 
+#run main and capture result in exit code
 db, userToken = auth.auth()
 status = main(db, userToken)
 if status:

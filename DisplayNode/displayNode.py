@@ -54,16 +54,16 @@ def updateTable(dictionary, tableName):
 
 
 ### MAIN
+def main():
+	# read patients and write
+	patients = db.child("patients").get(userToken)
+	updateTable(patients, "patients")
+	# read rules
 
-# read patients and write
-patients = db.child("patients").get(userToken)
-updateTable(patients, "patients")
-# read rules
+	# read actuators
 
-# read actuators
+	# read sensors
 
-# read sensors
-
-# read sensor data
+	# read sensor data
 
 

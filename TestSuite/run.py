@@ -6,25 +6,41 @@ import depopulateDB
 import os
 import auth
 
+#Authenticate to Firebase
 db, userToken = auth.auth()
 
-#populateDB.main(db, userToken)
+populateDB.main(db, userToken)
+result = runTest("TestSuite/runTest.py", "DisplayNode/venv/bin/python")
+result = runTest("TestSuite/displayNodeTest.py", "DisplayNode/venv/bin/python")
 
 
 
 
+#Run a test case and capture result in result using exit codes
+def runTest(file, venv) -> bool:
+	dir = os.getcwd()
+	dir = dir[0:dir.rfind("/")+1]
+	# Path to a Python interpreter that runs any Python script
+	# under the virtualenv /path/to/virtualenv/
+	python_bin = dir+venv
 
+	# Path to the script that must run under the virtualenv
+	script_file = dir+file
 
+	process = subprocess.Popen([python_bin, script_file])
+	result = process.wait()
+	print(result)
+	return result
 
-dir = os.getcwd()
-dir = dir[0:dir.rfind("/")+1]
-# Path to a Python interpreter that runs any Python script
-# under the virtualenv /path/to/virtualenv/
-python_bin = dir+"DisplayNode/venv/bin/python"
+#Run a python file
+def runFile(file, venv) -> bool:
+	dir = os.getcwd()
+	dir = dir[0:dir.rfind("/")+1]
+	# Path to a Python interpreter that runs any Python script
+	# under the virtualenv /path/to/virtualenv/
+	python_bin = dir+venv
 
-# Path to the script that must run under the virtualenv
-script_file = dir+"TestSuite/runTest.py"
+	# Path to the script that must run under the virtualenv
+	script_file = dir+file
 
-process = subprocess.Popen([python_bin, script_file])
-result = process.wait()
-print(result)
+	process = subprocess.Popen([python_bin, script_file])
