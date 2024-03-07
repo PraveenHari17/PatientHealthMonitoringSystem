@@ -1,4 +1,5 @@
 import pyrebase 
+import credentials
 
 def main(db, userToken):
 	ids = ["100", "101", "102"]
@@ -19,3 +20,14 @@ def main(db, userToken):
 		db.child("sensors").child(id).child("units").set("Celcius", userToken)
 		#Sensor Data
 		db.child("sensorData"+id).child("1709836639").child("value").set("19", userToken)
+
+# Init
+firebase = pyrebase.initialize_app(credentials.config) 
+
+# Get a reference to the auth service
+auth = firebase.auth()
+# Log the user in
+userToken = auth.sign_in_with_email_and_password(credentials.username, credentials.password)
+db = firebase.database()
+
+main(db, userToken)
