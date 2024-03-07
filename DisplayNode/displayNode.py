@@ -11,7 +11,7 @@ auth = firebase.auth()
 # Log the user in
 userToken = auth.sign_in_with_email_and_password(credentials.username, credentials.password)
 db = firebase.database()
-#now we create a cursor to work with db
+#Create a cursor to work with db
 cursor = SQLconnect.cursor();
 
 ###Functions
@@ -20,7 +20,11 @@ cursor = SQLconnect.cursor();
 def updateTable(dictionary, tableName):
 	cursor.execute("DROP TABLE IF EXISTS "+tableName+";")
 
-	columns = "(id integer PRIMARY KEY AUTOINCREMENT, "
+	#If the table is empty write nothing
+	if dictionary.each() == None:
+		return
+
+	columns = "(id integer, "
 	for key in dictionary.each()[0].val():
 		typeName = "TEXT"
 		#typeName = "INTEGER"
@@ -35,8 +39,8 @@ def updateTable(dictionary, tableName):
 	cursor.execute(statement)
 
 	for item in dictionary:
-		values="("
-		keys="("
+		values="("+item.key()+" , "
+		keys="(id, "
 		for column in item.val():
 			keys+=column+", "
 			test = db.child(tableName).child(item.key()).child(column).get(userToken)

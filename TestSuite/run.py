@@ -6,16 +6,6 @@ import depopulateDB
 import os
 import auth
 
-#Authenticate to Firebase
-db, userToken = auth.auth()
-
-populateDB.main(db, userToken)
-result = runTest("TestSuite/runTest.py", "DisplayNode/venv/bin/python")
-result = runTest("TestSuite/displayNodeTest.py", "DisplayNode/venv/bin/python")
-
-
-
-
 #Run a test case and capture result in result using exit codes BLOCKING
 def runTest(file, venv) -> bool:
 	dir = os.getcwd()
@@ -44,3 +34,13 @@ def runFile(file, venv) -> bool:
 	script_file = dir+file
 
 	process = subprocess.Popen([python_bin, script_file])
+
+
+
+#Authenticate to Firebase
+db, userToken = auth.auth()
+
+populateDB.main(db, userToken)
+result = runTest("TestSuite/runTest.py", "DisplayNode/venv/bin/python")
+result = runTest("TestSuite/displayNodeTest.py", "DisplayNode/venv/bin/python")
+print(result)
