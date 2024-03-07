@@ -1,7 +1,7 @@
 import pyrebase 
 
 def main(db, userToken):
-	ids = [100, 101, 102]
+	ids = ["100", "101", "102"]
 	for id in ids:
 		#Patients
 		db.child("patients").child(id).child("name").set("Eva", userToken)
