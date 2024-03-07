@@ -1,5 +1,5 @@
 import pyrebase 
 
 def main(db, userToken) -> bool:
-	print("hello")
+	#populate dummy database and assert SQL database matches
 	return false
