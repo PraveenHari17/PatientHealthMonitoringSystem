@@ -51,6 +51,11 @@ result = runTest("TestSuite/runTest.py", "DisplayNode/venv/bin/python")
 testsPassed += runTest("TestSuite/displayNodeTest.py", "DisplayNode/venv/bin/python")
 testsRun += 1
 
+#Enviromental Control Node Test
+runTest("TestSuite/end_to_end_1.py", "EnviromentalControlNode/venv/bin/python")
+testsPassed += runTest("TestSuite/end_to_end2.py", "EnviromentalControlNode/venv/bin/python")
+testsRun += 1
+
 
 print("Tests passed: "+testsPassed +" Tests Run: "+ testsRun)
 print(str(testsPassed/testsRun)+"% tests passing")
