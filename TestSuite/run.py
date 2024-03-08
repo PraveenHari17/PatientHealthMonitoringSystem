@@ -41,6 +41,20 @@ def runFile(file, venv) -> bool:
 db, userToken = auth.auth()
 
 populateDB.main(db, userToken)
+testsPassed = 0
+testsRun = 0
+
+#example
 result = runTest("TestSuite/runTest.py", "DisplayNode/venv/bin/python")
-result = runTest("TestSuite/displayNodeTest.py", "DisplayNode/venv/bin/python")
-print(result)
+
+#Display Node Test
+testsPassed += runTest("TestSuite/displayNodeTest.py", "DisplayNode/venv/bin/python")
+testsRun += 1
+
+
+print("Tests passed: "+testsPassed +" Tests Run: "+ testsRun)
+print(str(testsPassed/testsRun)+"% tests passing")
+if testsPassed == testsRun:
+	print("All tests passed")
+else:
+	print("Tests Failing")

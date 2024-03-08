@@ -3,7 +3,7 @@ import pyrebase
 
 def main(db, userToken) -> bool:
 	print("Hello")
-	return False;
+	return True;
 
 #run main and capture result in exit code
 db, userToken = auth.auth()

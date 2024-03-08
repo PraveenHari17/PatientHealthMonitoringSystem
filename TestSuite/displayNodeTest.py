@@ -68,10 +68,12 @@ def main(db, userToken) -> bool:
 	testsRun += 1
 
 	#Sum results
-	print(testsPassed, testsRun)
+	print("Tests passed: "+testsPassed +" Tests Run: "+ testsRun)
 	if testsPassed == testsRun:
+		Print("All tests passed")
 		return True
 	else:
+		Print(str(testsRun - testsPassed) +" tests Failed")
 		return False
 
 #run main and capture result in exit code
