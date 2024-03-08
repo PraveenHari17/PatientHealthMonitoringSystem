@@ -70,7 +70,7 @@ def main(db, userToken) -> bool:
 	#Sum results
 	print("Tests passed: "+str(testsPassed) +" Tests Run: "+ str(testsRun))
 	if testsPassed == testsRun:
-		Print("All tests passed")
+		print("All tests passed")
 		return True
 	else:
 		Print(str(testsRun - testsPassed) +" tests Failed")

@@ -48,10 +48,12 @@ testsRun = 0
 result = runTest("TestSuite/runTest.py", "DisplayNode/venv/bin/python")
 
 #Display Node Test
+print("Running Test 1 displayNodeTest")
 testsPassed += runTest("TestSuite/displayNodeTest.py", "DisplayNode/venv/bin/python")
 testsRun += 1
 
 #Enviromental Control Node Test
+print("Running Test 2 EnviromentalControlNode Test")
 runTest("TestSuite/end_to_end_1.py", "EnviromentalControlNode/venv/bin/python")
 testsPassed += runTest("TestSuite/end_to_end2.py", "EnviromentalControlNode/venv/bin/python")
 testsRun += 1
