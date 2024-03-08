@@ -57,7 +57,7 @@ testsPassed += runTest("TestSuite/end_to_end2.py", "EnviromentalControlNode/venv
 testsRun += 1
 
 
-print("Tests passed: "+testsPassed +" Tests Run: "+ testsRun)
+print("Tests passed: "+str(testsPassed) +" Tests Run: "+ str(testsRun))
 print(str(testsPassed/testsRun)+"% tests passing")
 if testsPassed == testsRun:
 	print("All tests passed")
