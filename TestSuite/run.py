@@ -58,7 +58,7 @@ testsRun += 1
 
 
 print("Tests passed: "+str(testsPassed) +" Tests Run: "+ str(testsRun))
-print(str(testsPassed/testsRun)+"% tests passing")
+print(str((testsPassed/testsRun)*100)+"% tests passing")
 if testsPassed == testsRun:
 	print("All tests passed")
 else:
