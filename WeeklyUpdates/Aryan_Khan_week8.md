@@ -1,7 +1,7 @@
 ## Weekly Individual Project Update Report
 ### Group number: 101205385
 ### Student name: Aryan Huq Khan
-### Week: 
+### Week: Feb 29 - Mar 7
 ___
 1. **How many hours did you spend on the project this week? 8
 
