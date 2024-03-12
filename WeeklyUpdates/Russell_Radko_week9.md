@@ -1,7 +1,7 @@
 ## Weekly Individual Project Update Report
 ### Group number: L2-G5
 ### Student name: Russell Radko
-### Week: Week 8 Mar 7-Mar 13
+### Week: Week 9 Mar 7-Mar 13
 ___
 1. **How many hours did you spend on the project this week? (0-10)**
     8 Hours
