@@ -11,7 +11,7 @@ ___
    2. 2nd item: finishing unit with group member, 5 hours
 3. ***What did you accomplish this week?*** _(Be specific)_
   - Finishing unit testing for friday demo
-  - Successful to circuit layout
+  - Successful to design circuit layout on breadboard
 4. ***How do you feel about your progress?*** _(brief, free-form reflection)_
   - Hahah, i think a little more left to do. 
 5. ***What are you planning to do next week***? _(give specific goals)_
