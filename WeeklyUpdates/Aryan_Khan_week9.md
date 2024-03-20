@@ -13,7 +13,7 @@ ___
   - finished tech memo
   - made plans for final deliverables (unit testing, final video presentation)
 4. ***How do you feel about your progress?*** _(brief, free-form reflection)_
-  - I am feeling condifent about our progress. Our just has to assemble our all the components together
+  - I am feeling condifent about our progress. Our team just has to assemble our all the components together
 5. ***What are you planning to do next week***? _(give specific goals)_
   - Work on final video presentation
   - Work on system integration, and finish unit testing
