@@ -1,6 +1,11 @@
 import pyrebase 
 import credentials
 import sqlite3
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
 
 # Init
 firebase = pyrebase.initialize_app(credentials.config) 
@@ -57,11 +62,32 @@ def updateTable(dictionary, tableName):
 	SQLconnect.commit();
 
 
+
+def sendEmail(address, subject, body):
+	msg = MIMEMultipart()
+
+	msg["From"] = credentials.email_user
+	msg["To"] = address
+	msg["Subject"] = subject
+
+	msg.attach(MIMEText(body,"plain"))
+
+	text = msg.as_string()
+	server = smtplib.SMTP("smtp.gmail.com",587)
+	server.starttls()
+	server.login(credentials.email_user,credentials.email_password)
+
+	server.sendmail(credentials.email_user,address,text)
+	server.quit()
+
+
+sendEmail("2russell.789@gmail.com", "test", "test1")
+
 ### MAIN
-def main():
+#def main():
 	# read patients and write
-	patients = db.child("patients").get(userToken)
-	updateTable(patients, "patients")
+	#patients = db.child("patients").get(userToken)
+	#updateTable(patients, "patients")
 	# read rules
 
 	# read actuators
