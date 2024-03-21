@@ -81,8 +81,6 @@ def sendEmail(address, subject, body):
 	server.quit()
 
 
-sendEmail("2russell.789@gmail.com", "test", "test1")
-
 ### MAIN
 #def main():
 	# read patients and write

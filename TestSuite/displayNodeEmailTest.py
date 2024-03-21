@@ -3,6 +3,7 @@ import sqlite3
 import auth
 import sys
 import os
+import traceback
 dir = os.getcwd()
 dir = dir[0:dir.rfind("/")+1]
 sys.path.insert(0, dir+'DisplayNode/')
@@ -21,9 +22,13 @@ def assertEquals(a, b) -> bool:
 		print(str(a)+" does not equal "+str(b))
 		return False
 
-
 def main(db, userToken) -> bool:
-	print("todo")
+	try:
+		displayNode.sendEmail("sysc3010l2g5.24@gmail.com", "Test", "Test body")
+	except:
+		print(traceback.format_exc())
+		return False
+	return True
 
 #run main and capture result in exit code
 db, userToken = auth.auth()
