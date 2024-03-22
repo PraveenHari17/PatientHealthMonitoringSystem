@@ -100,11 +100,11 @@ def writeLightData(val):
     # }
 def light_sensor_val():
     light_sensor_val = light_sensor.lux
+    writeLightData(light_sensor_val)
     print("%.2f Lux" % light_sensor_val)
 
 def light_helper():
     light_sensor_val()
-    writeLightData(light_sensor_val)
 
 while 1:
     #SPO2_helper()
