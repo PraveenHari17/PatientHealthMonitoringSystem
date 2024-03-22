@@ -1,9 +1,7 @@
-#import pyrebase
-#import json 
-#import credentials
-#import auth
-#from gpiozero import led 
-#from time import sleep
+import json 
+import RPi.GPIO as GPIO
+from time import sleep
+import pyrebase
 """
 Use this when you need to check the ID files
 with open('ID.txt', 'r') as file:
@@ -13,6 +11,27 @@ ID_json = file_contents.split('\n')
 
 print(ID_json)
 """
+credentials = {
+     "config": {
+         "apiKey": "AIzaSyCeiTiw7s57uVnVO_11P09zN54AOC12bjs",
+         "authDomain": "sysc-l2-g5-project.firebaseapp.com",
+         "databaseURL": "https://sysc-l2-g5-project-default-rtdb.firebaseio.com/",
+         "storageBucket": "sysc-l2-g5-project.appspot.com",
+
+     },
+     "username": "ecn@sysc3010project.com",
+     "password": "ECNECN"
+ }
+def auth():
+	# Init
+	firebase = pyrebase.initialize_app(credentials["config"])
+	# Get a reference to the auth service
+	auth = firebase.auth()
+	# Log the user in
+	userToken = auth.sign_in_with_email_and_password(credentials["username"], credentials["password"])
+	db = firebase.database()
+	return (db, userToken)
+
 db, userToken = auth()
 
 def initialize_value_uT(db, userToken):
@@ -169,10 +188,12 @@ def main():
 
 0 = heater
 
-1 = on
+action : 1 = on
+         0 = on
+
 
 actuator : 0 = heater relay, 1 = light relay , 2 = fans
-0 = temperature_sensor, 1 = light sensor, 2 = humidity sensor
+0 = temperature_sensor, 1 = light sensor, 2 = humidity sensor, 3 = blood oxygen, 4 = heart rate, 5 = body temperature
 < greater
 > lesser
 >= less than equal
@@ -180,6 +201,6 @@ actuator : 0 = heater relay, 1 = light relay , 2 = fans
 below = 1 for actuator increase 
 above = 0 for actuator decrease
 
-1 = 
+
 
 """
