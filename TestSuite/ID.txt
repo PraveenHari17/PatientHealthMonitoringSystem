@@ -1,0 +1,16 @@
+{
+  "actuators": [
+    {
+      "id": 100,
+      "name": "Heater",
+    },
+    {
+      "id": 101,
+      "name": "Light",
+    },
+    {
+      "id": 102,
+      "name": "Fans",
+    }
+  ]
+}

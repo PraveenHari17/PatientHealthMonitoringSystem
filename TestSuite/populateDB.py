@@ -7,7 +7,6 @@ def main(db, userToken):
 		#Patients
 		db.child("patients").child(id).child("name").set("Eva", userToken)
 		#Actuators
-		db.child("actuators").child(id).child("name").set("Heater", userToken)
 		#Rules
 		db.child("rules").child(id).child("name").set("Temperature above 20C", userToken)
 		db.child("rules").child(id).child("sensor").set("0", userToken)
@@ -20,6 +19,12 @@ def main(db, userToken):
 		db.child("sensors").child(id).child("units").set("Celcius", userToken)
 		#Sensor Data
 		db.child("sensorData"+id).child("1709836639").child("value").set("19", userToken)
+	
+    db.child("actuators").child(100).child("name").set("Heater", userToken)
+    db.child("actuators").child(101).child("name").set("Light", userToken)
+    db.child("actuators").child(102).child("name").set("Fans", userToken)
+    
+    
 
 # Init
 firebase = pyrebase.initialize_app(credentials.config) 
