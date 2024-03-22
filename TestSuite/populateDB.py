@@ -23,6 +23,7 @@ def main(db, userToken):
     db.child("actuators").child(100).child("name").set("Heater", userToken)
     db.child("actuators").child(101).child("name").set("Light", userToken)
     db.child("actuators").child(102).child("name").set("Fans", userToken)
+    db.child("sensorData100").child("1709836639").child("value").set("21", userToken)
     
     
 
