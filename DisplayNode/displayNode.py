@@ -80,18 +80,37 @@ def sendEmail(address, subject, body):
 	server.sendmail(credentials.email_user,address,text)
 	server.quit()
 
+def updateTables():
+	# read patients and write
+	patients = db.child("patients").get(userToken)
+	updateTable(patients, "patients")
+	# read rules
+	rules = db.child("rules").get(userToken)
+	updateTable(rules, "rules")
+	# read actuators
+	actuators = db.child("actuators").get(userToken)
+	updateTable(actuators, "actuators")
+	# read sensors
+	sensors = db.child("sensors").get(userToken)
+	updateTable(sensors, "sensors")
+	# read sensor data
+	if sensors.each() != None:
+		for sensor in sensors.each():
+			sensorData = db.child("sensorData"+str(sensor.key())).get(userToken)
+			print(sensorData.each())
+			updateTable(sensorData, "sensorData"+str(sensor.key()))	
+
+def fetchRules():
+	print("todo")
+	#result = cursor.execute('SELECT * FROM winds WHERE city=\''+inputCity+'\' ORDER BY date DESC LIMIT 1');
+	#row = result.fetchone()
+
 
 ### MAIN
-#def main():
-	# read patients and write
-	#patients = db.child("patients").get(userToken)
-	#updateTable(patients, "patients")
-	# read rules
-
-	# read actuators
-
-	# read sensors
-
-	# read sensor data
+def main():
+	print("main")
+	updateTables()
 
 
+if __name__ == '__main__':
+	main()
