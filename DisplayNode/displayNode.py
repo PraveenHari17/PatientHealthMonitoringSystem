@@ -1,6 +1,11 @@
 import pyrebase 
 import credentials
 import sqlite3
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
 
 # Init
 firebase = pyrebase.initialize_app(credentials.config) 
@@ -57,17 +62,55 @@ def updateTable(dictionary, tableName):
 	SQLconnect.commit();
 
 
-### MAIN
-def main():
+
+def sendEmail(address, subject, body):
+	msg = MIMEMultipart()
+
+	msg["From"] = credentials.email_user
+	msg["To"] = address
+	msg["Subject"] = subject
+
+	msg.attach(MIMEText(body,"plain"))
+
+	text = msg.as_string()
+	server = smtplib.SMTP("smtp.gmail.com",587)
+	server.starttls()
+	server.login(credentials.email_user,credentials.email_password)
+
+	server.sendmail(credentials.email_user,address,text)
+	server.quit()
+
+def updateTables():
 	# read patients and write
 	patients = db.child("patients").get(userToken)
 	updateTable(patients, "patients")
 	# read rules
-
+	rules = db.child("rules").get(userToken)
+	updateTable(rules, "rules")
 	# read actuators
-
+	actuators = db.child("actuators").get(userToken)
+	updateTable(actuators, "actuators")
 	# read sensors
-
+	sensors = db.child("sensors").get(userToken)
+	updateTable(sensors, "sensors")
 	# read sensor data
+	if sensors.each() != None:
+		for sensor in sensors.each():
+			sensorData = db.child("sensorData"+str(sensor.key())).get(userToken)
+			print(sensorData.each())
+			updateTable(sensorData, "sensorData"+str(sensor.key()))	
+
+def fetchRules():
+	print("todo")
+	#result = cursor.execute('SELECT * FROM winds WHERE city=\''+inputCity+'\' ORDER BY date DESC LIMIT 1');
+	#row = result.fetchone()
 
 
+### MAIN
+def main():
+	print("main")
+	updateTables()
+
+
+if __name__ == '__main__':
+	main()
