@@ -1,7 +1,10 @@
 import pyrebase 
 import credentials
 import sqlite3
+import threading
 import smtplib
+import time
+import math
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
@@ -18,6 +21,11 @@ userToken = auth.sign_in_with_email_and_password(credentials.username, credentia
 db = firebase.database()
 #Create a cursor to work with db
 cursor = SQLconnect.cursor();
+
+#Address to send notifications to
+notificationAddress = "sysc3010l2g5.24@gmail.com"
+#Time interval in seconds between notifications
+timeInterval = 30
 
 ###Functions
 
@@ -100,16 +108,87 @@ def updateTables():
 			print(sensorData.each())
 			updateTable(sensorData, "sensorData"+str(sensor.key()))	
 
-def fetchRules():
+def checkRules():
 	print("todo")
-	#result = cursor.execute('SELECT * FROM winds WHERE city=\''+inputCity+'\' ORDER BY date DESC LIMIT 1');
-	#row = result.fetchone()
+	rules = db.child("rules").get(userToken)
+	rulesList = rules.each()
 
+	for item in rulesList:
+		print(item.val())
+		dict = item.val()
+		if dict["actuator"] == "3":
+			print("email")
+			comparison = dict["comparison"]
+			print(comparison)
+			setValue = dict["value"]
+			print(setValue)
+			id = item.key()
+			print(id)
+			sensorDataTable = db.child("sensorData"+dict["sensor"]).get(userToken)
+			if sensorDataTable != None:
+				sensorValue = sensorDataTable.each()[-1].val()["value"]
+				print(sensorValue)
+				notifTimeResponse = db.child("notifTime").child(str(id)).get(userToken)
+				notifTime = notifTimeResponse.val()
+				if notifTime == None:
+					notifTime = 0
+				print(notifTime)
+				currentTime = math.floor(time.time())
+				print(currentTime)
+				flag = False
+				if comparison == "<" and sensorValue < setValue:
+					print("<")
+					flag = True
+				elif comparison == ">" and sensorValue > setValue:
+					print(">")
+					flag = True
+				elif comparison == "<=" and sensorValue <= setValue:
+					print("<=")
+					flag = True
+				elif comparison == ">=" and sensorValue >= setValue:
+					print(">=")
+					flag = True
+				else:
+					print("no compare")
+
+				if flag and (currentTime > notifTime + timeInterval):
+					print("email Sent")
+					subject = "Notification Enviromental Condition Violation"
+					body = "Warning rule: " + dict["name"] + " was violated current value " + sensorValue + " set value: " + setValue
+					sendEmail(notificationAddress, subject, body)
+					db.child("notifTime").child(str(id)).set(currentTime, userToken)
+
+
+def rulesLoop():
+	while(True):
+		checkRules()
+		print("rulesLoop")
+		time.sleep(15)
+
+def tablesLoop():
+	while(True):
+		updateTables()
+		print("tableLoop")
+		time.sleep(15)
+
+def mainloop():
+	while(True):
+		#updateTables()
+		checkRules()
+		print("Loop")
+		time.sleep(15)
 
 ### MAIN
 def main():
 	print("main")
-	updateTables()
+	#emailThread = threading.Thread(target=rulesLoop)
+	#emailThread.start()
+
+	#tablesLoop()
+
+	#emailThread.join()
+
+	mainloop()
 
 
 if __name__ == '__main__':
