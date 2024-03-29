@@ -120,13 +120,13 @@ def checkRules():
 			print("email")
 			comparison = dict["comparison"]
 			print(comparison)
-			setValue = dict["value"]
+			setValue = int(dict["value"])
 			print(setValue)
 			id = item.key()
 			print(id)
 			sensorDataTable = db.child("sensorData"+dict["sensor"]).get(userToken)
 			if sensorDataTable != None:
-				sensorValue = sensorDataTable.each()[-1].val()["value"]
+				sensorValue = int(sensorDataTable.each()[-1].val()["value"])
 				print(sensorValue)
 				notifTimeResponse = db.child("notifTime").child(str(id)).get(userToken)
 				notifTime = notifTimeResponse.val()
@@ -154,7 +154,7 @@ def checkRules():
 				if flag and (currentTime > notifTime + timeInterval):
 					print("email Sent")
 					subject = "Notification Enviromental Condition Violation"
-					body = "Warning rule: " + dict["name"] + " was violated current value " + sensorValue + " set value: " + setValue
+					body = "Warning rule: " + dict["name"] + " was violated current value " + str(sensorValue) + " set value: " + str(setValue)
 					sendEmail(notificationAddress, subject, body)
 					db.child("notifTime").child(str(id)).set(currentTime, userToken)
 
