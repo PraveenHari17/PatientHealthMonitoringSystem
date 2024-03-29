@@ -1,6 +1,7 @@
 import time
 import board
 import max30100
+import adafruit_sht31d
 import adafruit_bh1750
 import pyrebase  
 import time
@@ -37,6 +38,11 @@ i2c_light = board.I2C()  # uses board.SCL and board.SDA
 light_sensor = adafruit_bh1750.BH1750(i2c_light)
 light_sensor_val = 0#initial value for light
 
+# Create the I2C bus for temperature and humidity sensor
+i2c_temp_humi = board.I2C()
+# Create a sensor instance
+temp_humi_sensor = adafruit_sht31d.SHT31D(i2c_temp_humi, address=0x45)
+
 #write spo2 data to database
 def writeSPO2Data(pulse,spo2):
             
@@ -47,8 +53,8 @@ def writeSPO2Data(pulse,spo2):
     timestamp = f"{datetime.now():%Y-%m-%d %H-%M-%S}"
         
     # When writing to your DB each child is a JSON key:value pair
-    db.child(username).child(dataset_SPO2).child(timestamp).set(sensorData)
-
+    #db.child(username).child(dataset_SPO2).child(timestamp).set(sensorData)
+    db.child("sensorData103").child(timestamp).set(sensorData)
     # The above command will add a JSON string to your DB in the form:
     # {
     #   "YOUR_USERNAME":{
@@ -88,7 +94,8 @@ def writeLightData(val):
     timestamp = f"{datetime.now():%Y-%m-%d %H-%M-%S}"
         
     # When writing to your DB each child is a JSON key:value pair
-    db.child(username).child(dataset_Light).child(timestamp).set(sensorData)
+    #db.child(username).child(dataset_Light).child(timestamp).set(sensorData)
+    db.child("sensorData101").child(timestamp).set(sensorData)
 
     # The above command will add a JSON string to your DB in the form:
     # {
@@ -106,7 +113,37 @@ def light_sensor_val():
 def light_helper():
     light_sensor_val()
 
+def writetemphumidity(humi,room_temp):
+    tempSensorData = f"Temperature: {room_temp:.2f} degrees C"
+    humiSensorData = f"Humidity: {humi:.2f} %"   
+    
+    # Generate a timestamp (Unix timestamp in milliseconds)
+    #timestamp = int((datetime.now().timestamp()) * 1000)
+    timestamp = f"{datetime.now():%Y-%m-%d %H-%M-%S}"
+        
+    # When writing to your DB each child is a JSON key:value pair
+    #db.child(username).child(dataset_Light).child(timestamp).set(sensorData)
+    db.child("sensorData102").child(timestamp).set(humiSensorData)
+    db.child("sensorData100").child(timestamp).set(tempSensorData)
+
+def temp_humidity_sensor_val():
+    humidity_sensor_val = temp_humi_sensor.humidity
+    room_temp_sensor_val = temp_humi_sensor.temperature
+    writeLightData(humidity_sensor_val, room_temp_sensor_val)
+    print('Temperature: {:.2f} degrees C'.format(room_temp_sensor_val))
+    print('Humidity: {:.2f}%'.format(humidity_sensor_val))
+    
+def temp_humidity_helper():
+    temp_humidity_sensor_val()
+"""
 while 1:
     #SPO2_helper()
-    light_helper()
+    #light_helper()
+    temp_humidity_helper()
     time.sleep(3)
+"""
+"""
+writetemphumidity(55.66678,27)
+writeLightData(6000)
+writeSPO2Data(65,95)
+"""
