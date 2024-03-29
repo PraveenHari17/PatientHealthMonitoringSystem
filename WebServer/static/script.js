@@ -6,7 +6,7 @@ function fetchSensorDataAndUpdateUI() {
       document.getElementById('room-humidity').textContent = data.Humidity ? `${data.Humidity}%` : '--';
       document.getElementById('room-light').textContent = data.Light ? `${data.Light} lux` : '--';
       document.getElementById('patient-heartbeat').textContent = data.HeartRate ? `${data.HeartRate} BPM` : '--';
-      document.getElementById('patient-oxygen').textContent = data.BloodOxygen ? `${data.BloodOxygen}%` : '--';
+      document.getElementById('patient-oxygen').textContent = data.BloodOxygen ? `${data.BloodOxygen}` : '--';
       document.getElementById('body-temp').textContent = data.BodyTemperature ? `${data.BodyTemperature}°C` : '--';
     })
     .catch(error => console.error('Error fetching sensor data:', error));
