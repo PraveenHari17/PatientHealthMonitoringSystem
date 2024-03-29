@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Health Monitoring Dashboard</title>
+    <!-- Correct path to CSS file for Flask -->
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Bootstrap CSS for styling and responsive layout -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Patient Health Monitoring Dashboard</h1>
+    </header>
+
+    <main class="container my-4">
+        <section id="patient-info" class="text-center mb-4">
+            <h2 class="mb-3">Patient Info</h2>
+            <p><strong>Name:</strong> <span id="patient-name">Praveen Hari</span></p>
+            <p><strong>Room No:</strong> <span id="room-number">101</span></p>
+        </section>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Health and Environmental Stats</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <p class="col-md-4"><strong>Room Temperature:</strong> <span id="room-temp">--°C</span></p>
+                    <p class="col-md-4"><strong>Humidity:</strong> <span id="room-humidity">--%</span></p>
+                    <p class="col-md-4"><strong>Light Intensity:</strong> <span id="room-light">-- lux</span></p>
+                </div>
+                <div class="row">
+                    <p class="col-md-4"><strong>Heartbeat:</strong> <span id="patient-heartbeat">-- BPM</span></p>
+                    <p class="col-md-4"><strong>Blood Oxygen:</strong> <span id="patient-oxygen">--%</span></p>
+                    <p class="col-md-4"><strong>Body Temperature:</strong> <span id="body-temp">--°C</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>Rule Configuration</h2>
+            </div>
+            <div class="card-body">
+                <form id="rule-form" class="row">
+                    <div class="form-group col-md-6">
+                        <label for="rule-name">Rule Name:</label>
+                        <input type="text" id="rule-name" class="form-control" placeholder="Enter rule name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="action-dropdown">Action:</label>
+                        <select id="action-dropdown" class="form-control">
+                            <option value="1">On</option>
+                            <option value="0">Off</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="actuator-dropdown">Actuator:</label>
+                        <select id="actuator-dropdown" class="form-control">
+                            <option value="0">Heater Relay</option>
+                            <option value="1">Light Relay</option>
+                            <option value="2">Fans</option>
+                            <option value="3">Email</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="comparison-dropdown">Comparison:</label>
+                        <select id="comparison-dropdown" class="form-control">
+                            <option value="<">Less Than</option>
+                            <option value=">">Greater Than</option>
+                            <option value="=">Equal To</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="sensor-dropdown">Sensor:</label>
+                        <select id="sensor-dropdown" class="form-control">
+                            <option value="0">Temperature Sensor</option>
+                            <option value="1">Light Sensor</option>
+                            <option value="2">Humidity Sensor</option>
+                            <option value="3">Blood Oxygen Sensor</option>
+                            <option value="4">Heart Rate Sensor</option>
+                            <option value="5">Body Temperature Sensor</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="value-input">Value:</label>
+                        <input type="number" id="value-input" class="form-control" placeholder="Enter value">
+                    </div>
+                    <div class="form-group col-12 text-center">
+                        <button type="submit" class="btn btn-success">Submit Rule</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-white text-center py-3">
+        <p>© 2024 Projekt Asclepius. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and its dependencies for interactive components -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Your JavaScript file -->
+    <script src="/static/script.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
+
+                       
