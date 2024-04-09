@@ -8,12 +8,12 @@ Atharva Kasture\
 Praveen Hari\
 TA: Oly Papillon  
 
-This repository contains all the necessary files to run the Projekt Asclepius health monitoring system and test its components.\
+This repository contains all the necessary files to run the Projekt Asclepius health monitoring system and test its components.
 
-Projekt Asclepius is a continuous health monitoring system that logs a patient current conditions as well as the ambient conditions of the room. Automation rules based on the
-sensor data can also be created to control the rooms ambient enviroment and send email notifications if a sensor exceeds a certain value. The web server provides a GUI to view the
-rooms current conditions as well as input automation rules. A local copy of the Firebase database will also be stored on the display node in a SQL database providing a backup of the
-recorded data.
+Projekt Asclepius is a continuous health monitoring system that logs a patient's current conditions as well as the ambient conditions of the room. Automation rules can also be created to
+control the room's ventilation, lights, heater and send email notifications if a sensor exceeds a certain value. The web server provides a GUI to view the
+room's current conditions and create automation rules. A local copy of the Firebase database will also be stored on the display node in an SQL database providing a backup of the
+recorded data. The sensor suite for Projekt Asclepius contains a heartbeat sensor, blood oxygen sensor, body temperature sensor, room temperature sensor, room humidity sensor and ambient light sensor.
 
 ## [DisplayNode](DisplayNode/)
 Sub-directory containing the files related to the display node. 
@@ -51,5 +51,5 @@ SensorNode/unit test/comp_val_read.py\
 WebServer/app.py
 
 ### Dependencies
-Pyrebase
-Sensor specific libraries
+Pyrebase\
+Sensor specific libraries\
