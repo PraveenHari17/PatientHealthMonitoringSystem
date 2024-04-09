@@ -1,5 +1,4 @@
 # Group L2-G5 Projekt Asclepius
-Group L2-G5\
 SYSC 3010A
 
 Russell Radko\
@@ -36,14 +35,14 @@ Sub-directory containing the weekly WIPUR for all four group members.
 
 ### Setup instructions
 
-To run the Projekt Asclepius health monitoring system there are four python scripts that must be run.
+Four Python scripts must be run to run the Projekt Asclepius health monitoring system.
 
 The sensor nodes must be connected to the sensors and run SensorNode/unit test/comp_val_read.py which will collect the sensor data and send it to the Firebase database.
 The display node hosts the web server as well as the local database. On the display node run DisplayNode/displayNode.py this script will create the local SQL database and
 send emails according to the automation rules that have been set. WebServer/app.py must also be run to start the web server the website can then be accessed. the environmental
 control node must be connected to the relays controlling the ventilation, heat and lights. Then run EnviromentalControlNode/ec_node.py This will then begin polling the database for the latest sensor data and compare it to the automation rules.
 
-Run
+Must Run
 
 DisplayNode/displayNode.py\
 EnviromentalControlNode/ec_node.py\
