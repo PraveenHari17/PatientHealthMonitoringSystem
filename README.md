@@ -11,7 +11,7 @@ TA: Oly Papillon 
 This repository contains all the necessary files to run the Projekt Asclepius health monitoring system and test its components.
 
 Projekt Asclepius is a continuous health monitoring system that logs a patient's current conditions as well as the ambient conditions of the room. Automation rules can also be created to
-control the room's ventilation, lights, heater and send email notifications if a sensor exceeds a certain value. The web server provides a GUI to view the
+control the room's ventilation, lights, heat and send email notifications if a sensor exceeds a certain value. The web server provides a GUI to view the
 room's current conditions and create automation rules. A local copy of the Firebase database will also be stored on the display node in an SQL database providing a backup of the
 recorded data. The sensor suite for Projekt Asclepius contains a heartbeat sensor, blood oxygen sensor, body temperature sensor, room temperature sensor, room humidity sensor and ambient light sensor.
 
@@ -52,4 +52,4 @@ WebServer/app.py
 
 ### Dependencies
 Pyrebase\
-Sensor specific libraries\
+Sensor specific libraries
