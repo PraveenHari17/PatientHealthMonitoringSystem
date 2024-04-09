@@ -1,6 +1,19 @@
 # Group L2-G5 Projekt Asclepius
-This repository contains all the necessary files to run the Projekt Asclepius health monitoring system and test its components.
-To run the Projekt Asclepius health monitoring system there are four python scripts that must be run.
+Group L2-G5\
+SYSC 3010A
+
+Russell Radko\
+Aryan Huq Khan\
+Atharva Kasture\
+Praveen Hari\
+TA: Oly Papillon  
+
+This repository contains all the necessary files to run the Projekt Asclepius health monitoring system and test its components.\
+
+Projekt Asclepius is a continuous health monitoring system that logs a patient current conditions as well as the ambient conditions of the room. Automation rules based on the
+sensor data can also be created to control the rooms ambient enviroment and send email notifications if a sensor exceeds a certain value. The web server provides a GUI to view the
+rooms current conditions as well as input automation rules. A local copy of the Firebase database will also be stored on the display node in a SQL database providing a backup of the
+recorded data.
 
 ## [DisplayNode](DisplayNode/)
 Sub-directory containing the files related to the display node. 
@@ -23,6 +36,8 @@ Sub-directory containing the weekly WIPUR for all four group members.
 
 ### Setup instructions
 
+To run the Projekt Asclepius health monitoring system there are four python scripts that must be run.
+
 The sensor nodes must be connected to the sensors and run SensorNode/unit test/comp_val_read.py which will collect the sensor data and send it to the Firebase database.
 The display node hosts the web server as well as the local database. On the display node run DisplayNode/displayNode.py this script will create the local SQL database and
 send emails according to the automation rules that have been set. WebServer/app.py must also be run to start the web server the website can then be accessed. the environmental
@@ -36,3 +51,5 @@ SensorNode/unit test/comp_val_read.py\
 WebServer/app.py
 
 ### Dependencies
+Pyrebase
+Sensor specific libraries
