@@ -51,4 +51,6 @@ WebServer/app.py
 
 ### Dependencies
 Pyrebase\
-Sensor specific libraries
+adafruit-circuitpython-bh1750\
+adafruit-circuitpython-sht31\
+max30100
