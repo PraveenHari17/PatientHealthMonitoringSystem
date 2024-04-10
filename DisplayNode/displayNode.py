@@ -25,7 +25,7 @@ cursor = SQLconnect.cursor();
 #Address to send notifications to
 notificationAddress = "sysc3010l2g5.24@gmail.com"
 #Time interval in seconds between notifications
-timeInterval = 30
+timeInterval = 1
 
 ###Functions
 
@@ -176,7 +176,7 @@ def mainloop():
 		#updateTables()
 		checkRules()
 		print("Loop")
-		time.sleep(15)
+		time.sleep(5)
 
 ### MAIN
 def main():
